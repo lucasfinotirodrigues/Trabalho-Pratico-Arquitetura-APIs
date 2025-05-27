@@ -6,28 +6,29 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import application.model.Usuario;
-import application.repository.UsuarioRepository;
+import application.model.Aluno;
+import application.repository.AlunoRepository;
+
 
 @Service
 public class AppUserDataService implements UserDetailsService {
     @Autowired
-    private UsuarioRepository usuarioRepo;
+    private AlunoRepository alunoRepo;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario usuario = usuarioRepo.findByNomeDeUsuario(username);
+public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    // Alterando para buscar por email em vez de nome
+    Aluno aluno = alunoRepo.findByEmail(username)
+            .orElseThrow(() -> new UsernameNotFoundException("Aluno Não Encontrado"));
+    
+    UserDetails userDetails = org.springframework.security.core.userdetails.User.builder()
+        .username(aluno.getEmail())
+        .password(aluno.getSenha())
+        .roles("USER")
+        .build();
 
-        if(usuario == null) {
-            throw new UsernameNotFoundException("Usuário Não Encontrado");
-        }
+    return userDetails;
+}
 
-        UserDetails userDetails = org.springframework.security.core.userdetails.User.builder()
-            .username(usuario.getNomeDeUsuario())
-            .password(usuario.getSenha())
-            .roles("USER")
-            .build();
 
-        return userDetails;
-    }
 }   
