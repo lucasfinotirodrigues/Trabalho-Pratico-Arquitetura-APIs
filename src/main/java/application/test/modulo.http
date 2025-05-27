@@ -1,0 +1,37 @@
+### Obter detalhes de um módulo
+@baseUrl = https://humble-umbrella-jp6vp69qx76cpg4g-8080.app.github.dev/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQ3Vyc29zIiwic3ViIjoidGVzdGVAdGVzdGUuY29tIiwiaWQiOjEsImV4cCI6MTc0ODQ2NDc0MX0.GhZdaaqBPWmFUVN20Aghqi93CW8BwrL93Vu_kvIlJSw
+### Listar módulos de um curso
+
+
+GET {{baseUrl}}/cursos/1/modulos
+Authorization: Bearer {{token}}
+
+### Obter detalhes de um módulo
+GET {{baseUrl}}/modulos/1
+Authorization: Bearer {{token}}
+###
+### Criar novo módulo para um curso
+
+POST {{baseUrl}}/cursos/1/modulos
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "titulo": "Introdução ao Spring Boot",
+  "descricao": "Fundamentos e configuração inicial do Spring Boot"
+}
+
+### Atualizar módulo
+PUT {{baseUrl}}/modulos/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "titulo": "Introdução ao Spring Boot - Atualizado",
+  "descricao": "Fundamentos, configuração e boas práticas com Spring Boot"
+}
+
+### Excluir módulo
+DELETE {{baseUrl}}/modulos/1
+Authorization: Bearer {{token}}

@@ -1,0 +1,9 @@
+### Matricular aluno autenticado em um curso
+@baseUrl = https://humble-umbrella-jp6vp69qx76cpg4g-8080.app.github.dev/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQ3Vyc29zIiwic3ViIjoidGVzdGVAdGVzdGUuY29tIiwiaWQiOjEsImV4cCI6MTc0ODQ2NDc0MX0.GhZdaaqBPWmFUVN20Aghqi93CW8BwrL93Vu_kvIlJSw
+POST {{baseUrl}}/matriculas/1
+Authorization: Bearer {{token}}
+
+### Listar cursos em que o aluno autenticado está matriculado
+GET {{baseUrl}}/matriculas
+Authorization: Bearer {{token}}

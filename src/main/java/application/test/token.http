@@ -1,0 +1,24 @@
+### Variáveis globais
+@baseUrl = https://humble-umbrella-jp6vp69qx76cpg4g-8080.app.github.dev/api
+@authToken = {{login.response.body.token}}
+
+### Registrar novo usuário
+# @name registro
+POST {{baseUrl}}/auth/registro
+Content-Type: application/json
+
+{
+  "nome": "Teste",
+  "email": "teste@teste.com",
+  "senha": "teste123"
+}
+
+### Login para obter token JWT
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "teste@teste.com",
+  "senha": "teste123"
+}
