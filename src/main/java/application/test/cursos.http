@@ -1,13 +1,14 @@
 ### Listar todos os cursos
 @baseUrl = https://humble-umbrella-jp6vp69qx76cpg4g-8080.app.github.dev/api
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQ3Vyc29zIiwic3ViIjoidGVzdGVAdGVzdGUuY29tIiwiaWQiOjEsImV4cCI6MTc0ODQ2NDc0MX0.GhZdaaqBPWmFUVN20Aghqi93CW8BwrL93Vu_kvIlJSw
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQ3Vyc29zIiwic3ViIjoidGVzdGUzQHRlc3RlLmNvbSIsImlkIjoyLCJleHAiOjE3NDkwNjg2OTZ9.j-7o-NM72D4r60N6ILKmD9SM8pI3ite7PGpyUdn9OFo
+###
 
 GET {{baseUrl}}/cursos
 Authorization: Bearer {{token}}
 
 
 ### Obter curso por ID
-GET {{baseUrl}}/cursos/1
+GET {{baseUrl}}/cursos/2
 Authorization: Bearer {{token}}
 
 
@@ -22,9 +23,8 @@ Authorization: Bearer {{token}}
   "cargaHoraria": 40
 }
 
-
 ### Atualizar curso
-PUT {{baseUrl}}/cursos/1
+PUT {{baseUrl}}/cursos/3
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
@@ -36,5 +36,5 @@ Authorization: Bearer {{token}}
 
 
 ### Deletar curso
-DELETE {{baseUrl}}/cursos/1
+DELETE {{baseUrl}}/cursos/3
 Authorization: Bearer {{token}}
